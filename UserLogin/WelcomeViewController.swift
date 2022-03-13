@@ -11,19 +11,11 @@ class WelcomeViewController: UIViewController {
 	
 	@IBOutlet var greetingLabel: UILabel!
 	
-	var username: String!
+	var user = ""
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		greetingLabel.text = "Welcome, " + username
+		greetingLabel.text = "Welcome, \(user)!"
 	}
-	
-	@IBAction func unwind(for segue: UIStoryboardSegue) {
-		guard let loginVC = segue.destination as? LoginViewController else { return }
-		loginVC.usernameTF.text = ""
-		loginVC.passwordTF.text = ""
-	}
-	
-	@IBAction func logOutButtonPressed(_ sender: Any) {
-	}
+
 }
